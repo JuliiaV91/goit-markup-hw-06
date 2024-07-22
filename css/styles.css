@@ -4,6 +4,9 @@
     color: #434455;
     background-color: #fff;
 }
+.hide {
+    display: none;
+}
 h1,h2,h3,p {
     margin: 0;
 }
@@ -18,12 +21,34 @@ img {
     margin: 0;
 
 }
-.container {
+/* .container {
     width: 1158px;
     padding: 0 15px;
     margin: 0 auto;
     outline: 2px solid red;
     outline-offset: -2px;
+} */
+.container {
+    max-width: 320px;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-left: auto;
+    margin-right: auto;
+
+    outline: 2px solid red;
+    outline-offset: -2px;
+}
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+}
+@media screen and (min-width: 1158px) {
+    .container {
+        max-width: 1158px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 .section {
     padding: 120px 0;
@@ -31,6 +56,7 @@ img {
 .header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 .header {
     border-bottom: 1px solid #E7E9FC;
@@ -45,46 +71,100 @@ img {
 .address-style {
     font-style: normal;
     margin-left: auto;
+    display: none;
 }
-.address-list {
-    display: flex;
-    gap: 40px;
+.header-list {
+    display: none;
 }
-.contacts-style {
-    color: #434455;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.open-menu {
+    padding: 0;
+    line-height: 0;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
 }
-
-.header-list{
-    display: flex;
-    gap: 40px;
+@media screen and (min-width:768px) {
+    
+    .open-menu {
+        display: none;
+    }
+    
+    .header-logo {
+        margin-right: 120px;
+    }
+    .header-list {
+        display: flex;
+        gap: 40px;
+    }
+    .link {
+        color: #2e2f42;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 24px 0;
+        display: block;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+    }
+    
+    .link:hover,
+    .link:focus {
+        color: #404bbf;
+    }
+    .current {
+        position: relative;
+        color: #404bbf;
+    }
+    
+    .current::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        background-color: #404bbf;
+        border-radius: 2px;
+        height: 4px;
+        width: 100%;
+    }
+    .address-style {
+        display: block;
+    }
+    .contacts-style {
+        color: #434455;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.16;
+        letter-spacing: 0.02em;
+        transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .contacts-style:hover,
+    .contacts-style:focus {
+        color: #404bbf;
+        text-decoration: none;
+    }
+    .address-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
 }
-
-.contacts-style:hover, .contacts-style:focus {
-    color: #404bbf;
-    text-decoration: none;
-}
-.link {
-    color: #2e2f42;
-    text-decoration: none;
-    font-family: "Roboto", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    padding: 24px 0;
-    display: block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-.link:hover, .link:focus {
-    color: #404bbf;
+@media screen and (min-width:1158px) {
+    .header-logo {
+        margin-right: 76px;
+    }
+    .address-list {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .contacts-style {
+        font-size: 16px;
+        line-height: 1.5;
+    }
 }
 .button-style {
     display: block;
@@ -122,22 +202,9 @@ img {
     letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
-    margin-right: 76px;
+    padding: 17px, 0;
 }
-.current {
-    position: relative;
-    color: #404bbf;
-}
-.current::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    background-color: #404bbf;
-    border-radius: 2px;
-    height: 4px;
-    width: 100%;
-}
+
 .section-one {
     max-width: 1440px;
     margin: 0 auto;
@@ -665,4 +732,81 @@ input[type="checkbox"]:checked + .modal-form-dscr > .modal-form-checkbox{
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    padding: 72px 16px 40px;
+    background-color: #ffffff;
+
+    transform: translateX(100%);
+    visibility: hidden;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform, visibility;
+}
+.mobile-menu.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+.mobile-menu-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e7e9fc;
+    border-radius: 50%;
+    background-color: transparent;
+}
+.mobile-menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: auto;
+
+}
+
+.mobile-menu-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+.mobile-menu-link {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    text-decoration: none;
+}
+.mobile-menu-link.active {
+    color: #404bbf;
+}
+.mobile-menu-contacts {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 48px;
+
+}
+.mobile-menu-contacts-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+.mobile-menu-contacts-link {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42 ;
+    text-decoration: none;
+}
+.mobile-menu-contacts-link.accent {
+    color: #404bbf;
+
+}
+.mobile-socials {
+    gap: 40px;
+    margin: 0;
 }

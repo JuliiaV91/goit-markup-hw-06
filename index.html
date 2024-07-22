@@ -52,16 +52,21 @@
             </li>
           </ul>
         </address>
+        <button type="button" class="open-menu">
+          <svg width="24" height="24">
+            <use href="./images/icons.svg#icon-menu-button"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
-      <section class="section-one section">
+      <section class="section-one section hide">
         <div class="container">
           <h1 class="h-style">Effective Solutions for Your Business</h1>
           <button class="button-style" type="button">Order Service</button>
         </div>
       </section>
-      <section class="section section-two">
+      <section class="section section-two hide">
         <div class="container">
           <h2 class="head-style visually-hidden">Features</h2>
           <ul class="list-style features-list">
@@ -116,7 +121,7 @@
           </ul>
         </div>
       </section>
-      <section class="dev-section section">
+      <section class="dev-section section hide">
         <div class="container">
           <h2 class="head-style dev-title">Our Team</h2>
           <ul class="list-style dev-list">
@@ -307,7 +312,7 @@
           </ul>
         </div>
       </section>
-      <section class="section-four">
+      <section class="section-four hide">
         <div class="container">
           <h2 class="head-style portfolio">Our Portfolio</h2>
           <ul class="list-style portfolio-list">
@@ -438,7 +443,7 @@
         </div>
       </section>
     </main>
-    <footer class="footer-style">
+    <footer class="footer-style hide">
       <div class="container footer">
         <div class="logo-container">
           <a class="footer-logo" href="./index.html"
@@ -588,6 +593,91 @@
           <button class="button-style" type="submit">Send</button>
         </form>
       </div>
+    </div>
+
+    <div class="mobile-menu">
+      <button class="mobile-menu-button" type="button">
+        <svg width="12" height="12">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+      <ul class="mobile-menu-list">
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link active" href="">Studio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Portfolio</a>
+        </li>
+        <li class="mobile-menu-item">
+          <a class="mobile-menu-link" href="">Contacts</a>
+        </li>
+      </ul>
+      <ul class="mobile-menu-contacts">
+        <li class="mobile-menu-contacts-item">
+          <a class="mobile-menu-contacts-link accent" href="tel:+110001111111"
+            >+11 (000) 111-11-11</a
+          >
+        </li>
+        <li class="mobile-menu-contacts-item">
+          <a class="mobile-menu-contacts-link" href="mailto:info@devstudio.com"
+            >info@devstudio.com</a
+          >
+        </li>
+      </ul>
+      <ul class="footer-socials-style mobile-socials">
+        <li class="footer-class">
+          <a
+            class="footer-socials"
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener no-referrer"
+            aria-label="Instagram link"
+          >
+            <svg class="svg-class-footer" width="24" height="24">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-class">
+          <a
+            class="footer-socials"
+            href="https://x.com"
+            target="_blank"
+            rel="noopener no-referrer"
+            aria-label="Twitter link"
+          >
+            <svg class="svg-class-footer" width="24" height="24">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-class">
+          <a
+            class="footer-socials"
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener no-referrer"
+            aria-label="Facebook link"
+          >
+            <svg class="svg-class-footer" width="24" height="24">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="footer-class">
+          <a
+            class="footer-socials"
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener no-referrer"
+            aria-label="Linkedin link"
+          >
+            <svg class="svg-class-footer" width="24" height="24">
+              <use href="./images/icons.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
